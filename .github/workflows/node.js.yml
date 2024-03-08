@@ -27,13 +27,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    # - run: |
-    #     touch .env
-    #     echo "${{ secrets.PROD_ENV_PRODUCT_MANAGE_FILE }}" > .env
-    # - run: touch .env
-    # - run: echo "${{ secrets.PROD_ENV_PRODUCT_MANAGE_FILE }}" > .env
+    - run: touch .env
     - run: echo "${{ secrets.PROD_ENV_PRODUCT_MANAGE_FILE }}" > .env
-    - run: echo "value ${{ secrets.PROD_ENV_PRODUCT_MANAGE_FILE }}"
-    - run: ls -la # Check file permissions and existence
-    - run: cat .env
+    # - run: echo "${{ secrets.PROD_ENV_PRODUCT_MANAGE_FILE }}" > .env
+    # - run: echo "value ${{ secrets.PROD_ENV_PRODUCT_MANAGE_FILE }}"
+    # - run: ls -la # Check file permissions and existence
+    # - run: cat .env
 
